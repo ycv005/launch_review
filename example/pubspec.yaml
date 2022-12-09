@@ -1,4 +1,4 @@
-name: launch_review_example
+name: launch_app_store_example
 description: Demonstrates how to use the launch_review plugin.
 
 environment:                                                      
@@ -16,7 +16,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  launch_review:
+  launch_app_store:
     path: ../
 
 # For information on the generic Dart part of this file, see the
