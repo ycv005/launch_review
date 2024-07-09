@@ -1,4 +1,4 @@
-package com.iyaffle.launchreviewexample
+package com.example.launchreview
 
 import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity
