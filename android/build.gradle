@@ -10,6 +10,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace = "com.iyaffle.launchreview"
     compileSdk = 34
 
     defaultConfig {
