@@ -28,19 +28,21 @@
             } else {
               iTunesLink = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", appId];
             }
-            
+
             if ([call.arguments[@"is_ios_beta"] boolValue]) {
               NSURL *customAppURL = [NSURL URLWithString:@"itms-beta://"];
               if ([[UIApplication sharedApplication] canOpenURL:customAppURL]) {
-                  
+
                   // TestFlight is installed
-                  
+
                   // Special link that includes the app's Apple ID
                   iTunesLink = [NSString stringWithFormat:@"itms-beta://beta.itunes.apple.com/v1/app/id%@", appId];
                   NSURL* itunesURL = [NSURL URLWithString:iTunesLink];
 
                   if ([[UIApplication sharedApplication] canOpenURL:itunesURL]) {
-                    [[UIApplication sharedApplication] openURL:itunesURL];
+                    [[UIApplication sharedApplication] openURL:itunesURL
+                                                       options:@{}
+                                             completionHandler:nil];
                   }
                   result(nil);
               }
@@ -48,7 +50,13 @@
 
             NSURL* itunesURL = [NSURL URLWithString:iTunesLink];
             if ([[UIApplication sharedApplication] canOpenURL:itunesURL]) {
-              [[UIApplication sharedApplication] openURL:itunesURL];
+              [[UIApplication sharedApplication] openURL:itunesURL
+                                                 options:@{}
+                                       completionHandler:^(BOOL success) {
+                  if (!success) {
+                      NSLog(@"Failed to open URL: %@", itunesURL);
+                  }
+              }];
             }
 
             result(nil);
