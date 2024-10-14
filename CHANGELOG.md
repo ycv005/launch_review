@@ -1,3 +1,6 @@
+## 1.1.3
+* Replace deprecated openURL with openURL:options:completionHandler for iOS compatibility. Thanks for @nosuke0926
+
 ## 1.1.2
 
 * Upgrade Kotlin version to 17 and Gradle version to 8.1
