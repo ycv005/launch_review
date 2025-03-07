@@ -1,3 +1,6 @@
+## 1.1.4
+* Fix flutter 3.29. Contributed by [VDuck2](https://github.com/VDuck02)
+
 ## 1.1.3
 * Replace deprecated openURL with openURL:options:completionHandler for iOS compatibility. Thanks for @nosuke0926
 
